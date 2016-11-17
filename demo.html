@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VanillaJS Demo</title>
+</head>
+<body>
+    <h1>VanillaJS Demo Page</h1>
+    <section>
+        <h2>select by id</h2>
+        <p id="selectByID">Select by id changes bgcolor</p>
+    </section>
+    <section>
+        <h2>select by css selector</h2>
+        <p class="css">Select by class changes bgcolor</p>
+    </section>
+    <section>
+        <h2>Select by attr</h2>
+        <p spam="true">Select by attr spam</p>
+        <p spam="true">Select by attr spam</p>
+        <p spam="false">Select by attr Not spam</p>
+        <p spam="true">Select by attr spam</p>
+    </section>
+    <section>
+        <h2>select parent, child, siblings of element / Modifying text content</h2>
+        <div id="parent">
+            <p class="child">Child</p>
+            <p class="sibling">Sibling</p>
+        </div>
+    </section>
+    <section>
+        <h2>Adding and removing elements</h2>
+        <div id="addTarget">Add to me</div>
+        <div id="removeTarget">Remove me</div>
+    </section>
+    <section>
+        <h2>Adding and removing classes</h2>
+        <div id="addClassEl">I have no class. Gimme some!</div>
+        <div id="removeClassEl" class="classy">I have class. Remove it!</div>
+    </section>
+    <section>
+        <h2>Adding and removing attributes</h2>
+        <div id="addAttrEl"></div>
+        <div id="removeAttrEl" foo="blerg"></div>
+    </section>
+    <section>
+        <h2>Adding and removing data-attributes</h2>
+        <div id="addDataAttrEl"></div>
+        <div id="removeDataAttrEl" data-foo="blerg"></div>
+    </section>
+    <script src="demo.js"></script>
+</body>
+</html>

@@ -72,7 +72,61 @@ removeDataAttrEl.attributes.removeNamedItem('data-foo');
 
 
 // Getting input values
+const inputIn = document.getElementById('inputIn');
+const inputOut = document.getElementById('inputOut');
+inputIn.addEventListener('keyup', function(event) {
+    inputOut.textContent = inputIn.value;
+});
+
+
 // Using visual transition effects
+const fadeInButton = document.getElementById('fade-in-button');
+const fadeIn = document.getElementById('fade-in');
+fadeInButton.addEventListener('click', function(event) {
+    fadeIn.classList.toggle('show');
+});
+
+
 // Hiding/showing DOM
+const showInButton = document.getElementById('show-in-button');
+const showIn = document.getElementById('show-in');
+showInButton.addEventListener('click', function(event) {
+    showIn.classList.toggle('here');
+});
+
+
 // AJAX data GET & POST
-// Handling events
+const getData = document.getElementById('getData');
+const showData = document.getElementById('showData');
+getData.addEventListener('click', function(event) {
+    const url = 'http://api.icndb.com/jokes/random';
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true);
+    request.onload = function() {
+        if (this.status >= 200 && this.status < 400) {
+            // Success!
+            var resp = JSON.parse(this.response);
+            showData.textContent = resp.value.joke;
+        } else {
+            // We reached our target server, but it returned an error
+             showData.textContent = 'Error getting CHUCK NORRIS JOKE, sorry.';
+        }
+    };
+    request.onerror = function() {
+    // There was a connection error of some sort
+    };
+    request.send();
+});
+
+const postDataInput = document.getElementById('postDataInput');
+const postData = document.getElementById('postData');
+
+postData.addEventListener('click', function(event) {
+    const url = 'http://jsonplaceholder.typicode.com/posts';
+    var request = new XMLHttpRequest();
+    request.open('POST', url, true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    request.send(postDataInput.value);
+});
+
+// Handling events ^^ done in several of the tasks above. done.

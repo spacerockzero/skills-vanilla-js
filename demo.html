@@ -3,6 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>VanillaJS Demo</title>
+    <style>
+        section {
+            border: 1px dashed dodgerblue;
+            margin: 1em;
+            padding: 1em
+        }
+        .show {
+            transition: opacity 400ms;
+            opacity: 1 !important;
+        }
+        .hide {
+            opacity: 0;
+        }
+        .here {
+            display:block !important;
+        }
+        .gone {
+            display:none;
+        }
+    </style>
 </head>
 <body>
     <h1>VanillaJS Demo Page</h1>
@@ -47,6 +67,28 @@
         <h2>Adding and removing data-attributes</h2>
         <div id="addDataAttrEl"></div>
         <div id="removeDataAttrEl" data-foo="blerg"></div>
+    </section>
+    <section>
+        <h2>Getting input values</h2>
+        <input id="inputIn" type="text">
+        <p id="inputOut"></p>
+    </section>
+    <section>
+        <h2>Visual transition effects</h2>
+        <button id="fade-in-button">Do it!</button>
+        <div id="fade-in" class="hide">Cool fade-in effect using opacity and css transitions!</div>
+    </section>
+    <section>
+        <h2>Hiding/showing Dom</h2>
+        <button id="show-in-button">Do it!</button>
+        <div id="show-in" class="gone">Cool show-in effect using display:block!</div>
+    </section>
+    <section>
+        <h2>AJAX data GET & POST</h2>
+        <button id="getData">GET CHUCK NORRIS QUOTE!</button>
+        <p id="showData">(replace with data)</p>
+        <input type="text" id="postDataInput">
+        <button id="postData">POST DATA (watch net tab)</button>
     </section>
     <script src="demo.js"></script>
 </body>
